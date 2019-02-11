@@ -58,7 +58,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class SmartMenu extends Activity {
+public class SplashActivity extends Activity {
 
 	int i;
 	Locale lc;
@@ -493,7 +493,7 @@ public class SmartMenu extends Activity {
 	public void failedAuth1() {
 		// Data connection and Local Files not Available
 		//log("No Ping No Local");
-		AlertDialog alertDialog = new AlertDialog.Builder(SmartMenu.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SplashActivity.this).create();
 		alertDialog.setTitle("Connection 1");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("SmartMenu could not be started. Please check your settings.");
@@ -508,7 +508,7 @@ public class SmartMenu extends Activity {
 
 	public void failedAuth2() {
 		//log("Local files error");
-		AlertDialog alertDialog = new AlertDialog.Builder(SmartMenu.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SplashActivity.this).create();
 		alertDialog.setTitle("Connection 2");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("SmartMenu could not be started. Please check your settings.");
@@ -523,7 +523,7 @@ public class SmartMenu extends Activity {
 
 	public void failedAuth3() {
 		//log("Files download error");
-		AlertDialog alertDialog = new AlertDialog.Builder(SmartMenu.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SplashActivity.this).create();
 		alertDialog.setTitle("Connection 3");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("SmartMenu could not be started. Please check your settings.");

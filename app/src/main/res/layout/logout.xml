@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTopLO"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/rgb222"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/llLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:minWidth="500dip"
+        android:background="@drawable/border_grey_tight_inner"
+        android:padding="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Logout"
+            android:textSize="32dip"
+            android:layout_gravity="center"
+            android:padding="20dip"
+            android:typeface="sans" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/label15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dip"
+                android:text="Print a Register Summary"
+                android:layout_marginRight="10dp"
+                android:textSize="24sp"></TextView>
+
+            <CheckBox
+                android:id="@+id/printSummaryCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"></CheckBox>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/butLogout"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Logout"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dip"
+            android:layout_marginBottom="20dip"
+            android:textStyle="normal"
+            android:textSize="30sp"
+            android:enabled="true"
+            android:gravity="left"></Button>
+
+    </LinearLayout>
+</LinearLayout>

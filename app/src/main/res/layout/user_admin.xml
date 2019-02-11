@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTop"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/llUserAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/border_grey_tight_inner"
+        android:padding="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Staff Management"
+            android:textSize="28dip"
+            android:layout_gravity="center"
+            android:padding="10dip"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/textFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User List"
+            android:textColor="@color/rgbeee"
+            android:textSize="24dip"
+            android:layout_gravity="left"
+            android:padding="10dip"
+            android:typeface="sans" />
+
+        <ListView
+            android:id="@+id/listUsers"
+            android:layout_width="340dip"
+            android:layout_height="0dip"
+            android:drawSelectorOnTop="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:typeface="sans"
+            android:background="@color/rgb222"
+            android:textColor="@color/black"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/butNewUser"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Add User"
+            android:visibility="gone"
+            android:textColor="@color/rgbfff"
+            android:layout_marginTop="16dip"
+            android:textStyle="normal"
+            android:textSize="20dip"
+            android:enabled="true"
+            android:gravity="left"></Button>
+
+    </LinearLayout>
+</LinearLayout>

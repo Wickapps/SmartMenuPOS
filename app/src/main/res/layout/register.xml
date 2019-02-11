@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minWidth="500dip"
+        android:background="@drawable/border_grey_tight"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/regSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Summary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dip"
+            android:typeface="sans" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/loginTimeHead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Login time:"
+                android:textSize="16sp"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/loginTime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/logoutTimeHead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Current time:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/logoutTime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="num"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textServer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Server:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rserver"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textFloat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Float:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rfloat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textCash"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Cash:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rcash"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textCreditRegister"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Credit:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rcredit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textOther"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Other:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rother"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textSalesTotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Sales Total:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rsalestotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textPayoutTotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Payout Total:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rpayouttotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textTotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Total:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/rtotal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textSent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Orders Sent:"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/totalorders"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dip"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/butPrint"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Print Summary"
+                android:visibility="visible"
+                android:layout_margin="10dip"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:gravity="center"></Button>
+
+            <Button
+                android:id="@+id/butOpen"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Open Drawer"
+                android:visibility="visible"
+                android:layout_margin="10dip"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:gravity="center"></Button>
+
+            <Button
+                android:id="@+id/butPayout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Payout"
+                android:visibility="visible"
+                android:layout_margin="10dip"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:gravity="center"></Button>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

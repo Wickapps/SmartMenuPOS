@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/DS1"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/border_grey_tight"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:minWidth="400dp"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/welcomeHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:textSize="24dip"
+                android:typeface="sans"
+                android:textStyle="bold"
+                android:text="Daily Summary"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <Button
+                android:id="@+id/reloadDate"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:minWidth="200dip"
+                android:text="Choose Date"
+                android:drawableRight="@drawable/ic_menu_more"
+                android:visibility="visible"
+                android:textStyle="normal"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:layout_margin="0dip"
+                android:singleLine="true"
+                android:enabled="true"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:onClick="showDatePickerDialog"></Button>
+
+            <TextView
+                android:id="@+id/dailySummaryTxt"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:layout_marginTop="20dp"
+                android:textSize="12dip"
+                android:typeface="sans"
+                android:textStyle="normal"
+                android:gravity="left"
+                android:layout_gravity="left"></TextView>
+
+            <Button
+                android:id="@+id/dailySummaryPrint"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Print"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:layout_marginBottom="20dip"
+                android:textStyle="normal"
+                android:textSize="26sp"
+                android:enabled="true"
+                android:gravity="left"></Button>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

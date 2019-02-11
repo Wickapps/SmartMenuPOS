@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- this is a comment  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ticket_item_ll"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="2dip">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:padding="4dip"
+        android:paddingLeft="3dip"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/ticket_item_orderid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Order ID"
+            android:layout_marginTop="0dip"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical|center"
+            android:gravity="center_vertical|center" />
+
+        <TextView
+            android:id="@+id/ticket_item_ticketnum"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Ticket Number"
+            android:layout_marginBottom="2dip"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical|center"
+            android:gravity="center_vertical|center" />
+
+        <TextView
+            android:id="@+id/ticket_item_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Time"
+            android:layout_marginTop="0dip"
+            android:textStyle="normal"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left" />
+
+        <TextView
+            android:id="@+id/ticket_item_ticketid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Ticket ID"
+            android:layout_marginTop="0dip"
+            android:textStyle="normal"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left" />
+
+        <TextView
+            android:id="@+id/ticket_item_dishes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Dishes"
+            android:layout_marginTop="0dip"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left" />
+
+        <TextView
+            android:id="@+id/ticket_item_total"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:textColor="@color/black444"
+            android:background="@color/rgbccc"
+            android:text="Total"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left" />
+    </LinearLayout>
+</LinearLayout> 

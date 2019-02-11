@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minWidth="500dip"
+        android:background="@drawable/border_grey_tight_inner"
+        android:padding="5dip">
+
+        <LinearLayout
+            android:id="@+id/llBootSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:padding="10dip"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textBootTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Initial Settings"
+                android:textColor="@color/rgbfff"
+                android:textSize="28dip"
+                android:layout_gravity="center"
+                android:padding="10dip"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/textBootIntro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to SmartMenu. Please enter your initial settings. You will not have to enter these settings again."
+                android:textColor="@color/rgbeee"
+                android:textSize="15dip"
+                android:layout_gravity="center"
+                android:padding="10dip"
+                android:typeface="sans" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelServerIPtext"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/rgbeee"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Server IP"
+                    android:textSize="14sp"></TextView>
+
+                <EditText
+                    android:id="@+id/serverIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:maxLength="30"
+                    android:inputType="textUri"
+                    android:text=""
+                    android:hint="server name"
+                    android:textColor="@color/rgbfff"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"></EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelSMIDtext"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/rgbeee"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="SmartMenu ID"
+                    android:textSize="14sp"></TextView>
+
+                <EditText
+                    android:id="@+id/SMID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:maxLength="18"
+                    android:inputType="text"
+                    android:textColor="@color/rgbfff"
+                    android:text=""
+                    android:hint="12 alpha chars"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"></EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelSSL"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/rgbeee"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Use SSL Encryption"
+                    android:textSize="14sp"></TextView>
+
+                <CheckBox
+                    android:id="@+id/SSLprotocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:checked="true"></CheckBox>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelCheck204"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/rgbeee"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Check Server Available"
+                    android:textSize="14sp"></TextView>
+
+                <CheckBox
+                    android:id="@+id/Check204"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:checked="true"></CheckBox>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelAdminText"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/rgbeee"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Admin PIN"
+                    android:textSize="14sp"></TextView>
+
+                <EditText
+                    android:id="@+id/AdminPin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:inputType="numberPassword"
+                    android:textColor="@color/rgbeee"
+                    android:text=""
+                    android:hint="4 numbers"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"></EditText>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/butContinue"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Continue"
+                android:visibility="visible"
+                android:textStyle="normal"
+                android:textSize="20dip"
+                android:layout_marginTop="30dip"
+                android:textColor="@color/rgbfff"
+                android:enabled="true"
+                android:gravity="left"></Button>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

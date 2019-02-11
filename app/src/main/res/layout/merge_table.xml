@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTop"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/rgb222"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/llLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/border_grey_tight_inner"
+        android:padding="5dip"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Merge Tables"
+            android:textSize="26dip"
+            android:layout_gravity="center"
+            android:padding="2dip"
+            android:typeface="sans" />
+
+        <LinearLayout
+            android:id="@+id/lldoublewide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lldoublewideleft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTableFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textColor="@color/rgbeee"
+                    android:textSize="24dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_gravity="center"
+                    android:padding="10dip"
+                    android:typeface="sans" />
+
+                <Button
+                    android:id="@+id/spinnerNameFrom"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:minWidth="200dip"
+                    android:text="Existing Table"
+                    android:drawableRight="@drawable/ic_menu_more"
+                    android:visibility="visible"
+                    android:textStyle="normal"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:layout_margin="0dip"
+                    android:singleLine="true"
+                    android:enabled="true"
+                    android:layout_gravity="center_horizontal"></Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lldoublewideright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTableTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textColor="@color/rgbeee"
+                    android:textSize="24dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_gravity="center"
+                    android:padding="10dip"
+                    android:typeface="sans" />
+
+                <Button
+                    android:id="@+id/spinnerNameTo"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:minWidth="200dip"
+                    android:text="Existing Table"
+                    android:drawableRight="@drawable/ic_menu_more"
+                    android:visibility="visible"
+                    android:textStyle="normal"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:layout_margin="0dip"
+                    android:singleLine="true"
+                    android:enabled="true"
+                    android:layout_gravity="center_horizontal"></Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/butMerge"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dip"
+            android:text="Merge"
+            android:visibility="visible"
+            android:textColor="@color/rgbfff"
+            android:textStyle="normal"
+            android:textSize="28dip"
+            android:enabled="true"
+            android:gravity="left"></Button>
+
+    </LinearLayout>
+</LinearLayout>

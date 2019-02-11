@@ -1,0 +1,17 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Holo" />
+
+
+    <style name="ActionBar" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">
+            @android:style/Widget.Holo.ActionBar
+        </item>
+    </style>
+
+    <style name="CustomDialog2" parent="android:Theme.Holo">
+        <item name="android:background">@drawable/border_grey_tight</item>
+
+    </style>
+
+</resources>

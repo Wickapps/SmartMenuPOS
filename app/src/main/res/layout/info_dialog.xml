@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llInfo"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@drawable/border_grey_tight_inner"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/welcomeHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dip"
+        android:textSize="24dp"
+        android:typeface="sans"
+        android:textStyle="normal"
+        android:text="Status"
+        android:gravity="center"
+        android:layout_gravity="center"></TextView>
+
+    <LinearLayout
+        android:id="@+id/topTopppp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center|top"
+        android:orientation="horizontal">
+        <!-- Left Column -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dip"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/AboutAppName"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutVersion"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutFileSource"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutSmartMenuID"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutDeviceIP"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutDeviceId"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutWifi"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutMenuVersion"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/AboutTicketnum"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:layout_gravity="center"></TextView>
+        </LinearLayout>
+        <!-- End Left Column -->
+
+        <!-- Right Column -->
+        <LinearLayout
+            android:id="@+id/hmmmmLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llVVV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/label0a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_gravity="center"
+                        android:text="WiFi"
+                        android:textSize="14dp"></TextView>
+
+                    <ImageView
+                        android:id="@+id/lit0a"
+                        android:background="@drawable/presence_invisible"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Server"
+                            android:textSize="14dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/label1a2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Server IP"
+                            android:textSize="12dp"></TextView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lit1aServer"
+                        android:background="@drawable/presence_invisible"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 1"
+                            android:textSize="14dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/label2a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 1 IP"
+                            android:textSize="12dp"></TextView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lit2a"
+                        android:background="@drawable/presence_invisible"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 2"
+                            android:textSize="14dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/label13a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 2 IP"
+                            android:textSize="12dp"></TextView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lit3a"
+                        android:background="@drawable/presence_invisible"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 3"
+                            android:textSize="14dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/label14a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Printer 3 IP"
+                            android:textSize="12dp"></TextView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lit4a"
+                        android:background="@drawable/presence_invisible"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- End of 2nd Column -->
+    </LinearLayout>
+</LinearLayout>

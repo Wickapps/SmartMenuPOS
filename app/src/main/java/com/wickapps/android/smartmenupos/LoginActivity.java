@@ -343,7 +343,7 @@ public class LoginActivity extends Activity {
 								break;
 							case 2:
 								// Handle Settings Request
-								kintent = new Intent(getApplicationContext(), SyncActivity.class);
+                                kintent = new Intent(getApplicationContext(), SettingsActivity.class);
 								kintent.setFlags((Intent.FLAG_ACTIVITY_NO_HISTORY));
 								startActivity(kintent);
 								break;

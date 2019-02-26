@@ -84,7 +84,6 @@ public class SmartMenuService extends Service {
 	private static final String SM_PRNT3_THREAD_NAME = "SmartMenuServicePrnt3[" + DEBUG_TAG + "]";
 	private static final String SM_RESEND_THREAD_NAME = "SmartMenuServiceResend[" + DEBUG_TAG + "]";
 	private static final String SM_SAVE_THREAD_NAME = "SmartMenuServiceSave[" + DEBUG_TAG + "]";
-	private static final String SM_MQTT_THREAD_NAME = "SmartMenuServiceMqtt[" + DEBUG_TAG + "]"; // Handler Thread ID
 
 	private static final String ACTION_START = DEBUG_TAG + ".START"; // Action to start
 	private static final String ACTION_STOP = DEBUG_TAG + ".STOP"; // Action to stop
@@ -93,16 +92,13 @@ public class SmartMenuService extends Service {
 	private static final String ACTION_PRINT_TICKET3 = DEBUG_TAG + ".PRINT3"; // Action to Print a ticket
 	private static final String ACTION_RESEND = DEBUG_TAG + ".RESEND"; // Action to Resend Unsent Orders
 	private static final String ACTION_SAVE = DEBUG_TAG + ".SAVE"; // Action to Save an Order
-	private static final String ACTION_KEEPALIVE = DEBUG_TAG + ".KEEPALIVE"; // MQTT Action to keep alive used by alarm manager
-	private static final String ACTION_RECONNECT = DEBUG_TAG + ".RECONNECT"; // MQTT Action to reconnect
-	private static final String ACTION_DISCONNECT = DEBUG_TAG + ".DISCONNECT"; // MQTT Action to disconnect
 
 	// Order submit return codes
 	public static final String SM_ACK = "SMACK";  // The order was accepted
 	public static final String SM_NACK = "SMNACK"; // The order was not accepted
 	public static final String SM_INV = "SMINV";  // The JSON validation failed
 
-	Locale lc, locale;
+    Locale lc;
 
 	WakeLock mWakeLock;
 	WifiLock mWifiLock;
@@ -341,14 +337,14 @@ public class SmartMenuService extends Service {
 													// check to make sure the table is not already sending an order
 													Integer tabid = (Integer) jsonGetter2(tmpJson, "currenttableid");
 													int count = 0;
-													while (PlaceOrder.TableSending[tabid]) {
+                                                    while (POSActivity.TableSending[tabid]) {
 														//log("Socket New Order waiting: count=" + count);
 														Thread.sleep(Global.SocketRetrySleep);
 														count = count + 1;
 														// Set a limit to how long we can block (10 x 500 mils)
 														if (count == Global.SocketRetry) {
 															// shouldnt take so long so lets release it
-															PlaceOrder.TableSending[tabid] = false;
+                                                            POSActivity.TableSending[tabid] = false;
 															break;
 														}
 													}
@@ -513,15 +509,6 @@ public class SmartMenuService extends Service {
 		return (info == null) ? false : info.isAvailable();
 	}
 
-	// Query's the AlarmManager to check if there is a keep alive currently scheduled
-	private synchronized boolean hasScheduledKeepAlives() {
-		Intent i = new Intent();
-		i.setClass(this, SmartMenuService.class);
-		i.setAction(ACTION_KEEPALIVE);
-		PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_NO_CREATE);
-		return (pi != null) ? true : false;
-	}
-
 	@Override
 	public IBinder onBind(Intent arg0) {
 		log("Ibinder...");
@@ -545,9 +532,9 @@ public class SmartMenuService extends Service {
 
 		Notification myNotification;
 		NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-		Intent notificationIntent = new Intent(context, PlaceOrder.class);
+        Intent notificationIntent = new Intent(context, POSActivity.class);
 		PendingIntent pendingIntent = PendingIntent.getActivity(SmartMenuService.this, 1, notificationIntent, 0);
-		//Notification.Builder builder = new Notification.Builder(PlaceOrder.this);
+        //Notification.Builder builder = new Notification.Builder(POSActivity.this);
 
 		//builder.setAutoCancel(false);
 		//builder.setTicker("this is ticker text");
@@ -1146,9 +1133,9 @@ public class SmartMenuService extends Service {
 						counterOnly = false;
 					}
 					Boolean includeDish = true;
-					if (pnum == 2) if (!PlaceOrder.P2Filter.get(dishcatid)) includeDish = false;
+                    if (pnum == 2) if (!POSActivity.P2Filter.get(dishcatid)) includeDish = false;
 					if (pnum == 2) if (true == counterOnly) includeDish = false;
-					if (pnum == 3) if (!PlaceOrder.P3Filter.get(dishcatid)) includeDish = false;
+                    if (pnum == 3) if (!POSActivity.P3Filter.get(dishcatid)) includeDish = false;
 					if (pnum == 3) if (true == counterOnly) includeDish = true;
 					if (includeDish) {
 						// Passed the filter. Now check if already printed if partial

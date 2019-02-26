@@ -644,16 +644,6 @@ public class SplashActivity extends Activity {
 			log("loadJSONsettings2 Exception=" + e);
 		}
 
-		// Build the Welcome ArrayList
-		// Note that the Welcome info is only actually used in the ORDER app
-		Global.welcome.clear();
-		try {
-			String tmp = jsonGetter(Global.Settings, "welcome").toString();
-			Global.welcome.add(tmp);
-		} catch (Exception e) {
-			log("loadJSONsettings3 Exception=" + e);
-		}
-
 		// Build the Tablenames ArrayList
 		Global.tablenames.clear();
 		try {

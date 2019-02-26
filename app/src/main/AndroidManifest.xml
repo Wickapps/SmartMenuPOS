@@ -34,14 +34,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PlaceOrder"
+            android:name=".POSActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"
             android:launchMode="singleInstance"
             android:theme="@style/ActionBar"
             android:noHistory="false" />
         <activity
-            android:name=".SyncActivity"
+            android:name=".SettingsActivity"
             android:screenOrientation="landscape"
             android:configChanges="orientation"
             android:theme="@style/ActionBar"

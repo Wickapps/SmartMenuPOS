@@ -73,7 +73,6 @@ public class Global {
 	public static ArrayList<String> userList = new ArrayList<String>();
 	public static ArrayList<String> modifiers = new ArrayList<String>();
 	public static ArrayList<String> saletypes = new ArrayList<String>();
-	public static ArrayList<String> welcome = new ArrayList<String>();
 	public static ArrayList<String> tablenames = new ArrayList<String>();
 
 	public static String CheckedPicName = "";

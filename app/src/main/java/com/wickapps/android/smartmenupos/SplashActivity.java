@@ -107,7 +107,7 @@ public class SplashActivity extends Activity {
 		}
 
 		if (Global.LoggedIn) {
-			Intent kintent = new Intent(getApplicationContext(), PlaceOrder.class);
+			Intent kintent = new Intent(getApplicationContext(), POSActivity.class);
 			kintent.setFlags((Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
 			startActivity(kintent);
 		} else {

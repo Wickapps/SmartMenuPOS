@@ -337,7 +337,7 @@ public class LoginActivity extends Activity {
 								String sendserver = "3," + Utils.GetDateTime() + "," + Global.ServerName;
 								activityLogger(sendserver);
 								finish();
-								Intent kintent = new Intent(getApplicationContext(), PlaceOrder.class);
+								Intent kintent = new Intent(getApplicationContext(), POSActivity.class);
 								kintent.setFlags((Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
 								startActivity(kintent);
 								break;
@@ -472,16 +472,6 @@ public class LoginActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == 1) {
-			// save exit log
-			String sendserver = "5," + Utils.GetDateTime() + "," + Global.ServerName;
-			activityLogger(sendserver);
-			// Stop the Service
-			SmartMenuService.actionStop(getApplicationContext());
-
-			finish();
-			return (true);
-		}
 		if (item.getItemId() == 11) {
 			// Popup the status window
 			LayoutInflater factory = LayoutInflater.from(this);
@@ -904,28 +894,6 @@ public class LoginActivity extends Activity {
 				img.setBackgroundResource(R.drawable.presence_busy);
 			}
 		}
-	}
-
-	private void createAndRunStatusThread(final Activity act, final CustomDialog cd) {
-		m_bStatusThreadStop = false;
-		m_statusThread = new Thread(new Runnable() {
-			public void run() {
-				while (m_bStatusThreadStop == false) {
-					try {
-						//anything touching the GUI has to run on the Ui thread
-						act.runOnUiThread(new Runnable() {
-							public void run() {
-								updateConnectionStatus(cd);
-							}
-						});
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						m_bStatusThreadStop = true;
-					}
-				}
-			}
-		});
-		m_statusThread.start();
 	}
 
 	private Object jsonGetter2(JSONArray json, String key) {

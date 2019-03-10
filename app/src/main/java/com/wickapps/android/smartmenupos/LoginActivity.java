@@ -337,13 +337,13 @@ public class LoginActivity extends Activity {
 								String sendserver = "3," + Utils.GetDateTime() + "," + Global.ServerName;
 								activityLogger(sendserver);
 								finish();
-								Intent kintent = new Intent(getApplicationContext(), PlaceOrder.class);
+								Intent kintent = new Intent(getApplicationContext(), POSActivity.class);
 								kintent.setFlags((Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
 								startActivity(kintent);
 								break;
 							case 2:
 								// Handle Settings Request
-								kintent = new Intent(getApplicationContext(), SyncActivity.class);
+								kintent = new Intent(getApplicationContext(), SettingsActivity.class);
 								kintent.setFlags((Intent.FLAG_ACTIVITY_NO_HISTORY));
 								startActivity(kintent);
 								break;

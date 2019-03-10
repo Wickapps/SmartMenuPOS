@@ -54,7 +54,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class SyncActivity extends Activity {
+public class SettingsActivity extends Activity {
 	private File textDir;
 	private File logsDir;
 	private ConnectionLog mLog;
@@ -104,7 +104,7 @@ public class SyncActivity extends Activity {
 		} catch (Exception e) {
 		}
 
-		setContentView(R.layout.sync_layout);
+		setContentView(R.layout.settings_layout);
 
 		// Setup the ActionBar
 		getActionBar().setDisplayShowTitleEnabled(true);
@@ -513,7 +513,7 @@ public class SyncActivity extends Activity {
 		bUpload.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// Upload the Settings
-				final ProgressDialog pd = ProgressDialog.show(SyncActivity.this, "Uploading", "Uploading settings to the server...", true, false);
+				final ProgressDialog pd = ProgressDialog.show(SettingsActivity.this, "Uploading", "Uploading settings to the server...", true, false);
 				new Thread(new Runnable() {
 					public void run() {
 						// see if we can ping the server first
@@ -697,7 +697,7 @@ public class SyncActivity extends Activity {
 	}
 
 	private void failedAuth0() {
-		AlertDialog alertDialog = new AlertDialog.Builder(SyncActivity.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SettingsActivity.this).create();
 		alertDialog.setTitle("Connection");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("Data connection not available. Files cannot be reloaded.");
@@ -710,7 +710,7 @@ public class SyncActivity extends Activity {
 	}
 
 	private void failedAuth2() {
-		AlertDialog alertDialog = new AlertDialog.Builder(SyncActivity.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SettingsActivity.this).create();
 		alertDialog.setTitle("Uploading");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("Uploading not successful. Please try again.");
@@ -723,7 +723,7 @@ public class SyncActivity extends Activity {
 	}
 
 	private void failedAuth3() {
-		AlertDialog alertDialog = new AlertDialog.Builder(SyncActivity.this).create();
+		AlertDialog alertDialog = new AlertDialog.Builder(SettingsActivity.this).create();
 		alertDialog.setTitle("Reloading");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("Reload not successful. Please try again.");

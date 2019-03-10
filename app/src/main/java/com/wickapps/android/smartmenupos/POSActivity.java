@@ -118,7 +118,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @SuppressLint("NewApi")
-public class PlaceOrder extends Activity {
+public class POSActivity extends Activity {
 	private Button saveButton, closeButton, clearButton, p1Button, p2Button, p3Button, ODButton;
 	private TextView tvcc, tvautoprint;
 
@@ -295,14 +295,14 @@ public class PlaceOrder extends Activity {
 
 			// update the gridView
 			gridview = (GridView) findViewById(R.id.gridView1);
-			gridAdapter = new GridAdapter(PlaceOrder.this, R.layout.array_list_item, dishArrayList);
+            gridAdapter = new GridAdapter(POSActivity.this, R.layout.array_list_item, dishArrayList);
 			gridview.setAdapter(gridAdapter);
 
 			// Update the Order Items
 			setJSONOrderList(currentTableID);
 
 			listOrder = (ListView) findViewById(R.id.listOrder);
-			orderAdapter = new OrderAdapter(PlaceOrder.this, R.layout.list_item, JSONOrderList);
+            orderAdapter = new OrderAdapter(POSActivity.this, R.layout.list_item, JSONOrderList);
 			listOrder.setAdapter(orderAdapter);
 
 			// set the headers TextView for the Order from the JSON
@@ -360,10 +360,10 @@ public class PlaceOrder extends Activity {
 	final Runnable mOrderArrived = new Runnable() {
 		public void run() {
 			if (!autoPrint) {
-				//Toast.makeText(PlaceOrder.this, "\n\n\nNew Order Arrived\n\n\n", Toast.LENGTH_LONG).show();
+                //Toast.makeText(POSActivity.this, "\n\n\nNew Order Arrived\n\n\n", Toast.LENGTH_LONG).show();
 				LayoutInflater factory = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				final View textEntryView = factory.inflate(R.layout.new_order_dialog, null);
-				final CustomDialog customDialog = new CustomDialog(PlaceOrder.this);
+                final CustomDialog customDialog = new CustomDialog(POSActivity.this);
 				customDialog.setContentView(textEntryView);
 				customDialog.show();
 				customDialog.setCancelable(true);
@@ -383,7 +383,7 @@ public class PlaceOrder extends Activity {
 		public void run() {
 			LayoutInflater factory = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			final View textEntryView = factory.inflate(R.layout.new_msg_dialog, null);
-			final CustomDialog customDialog = new CustomDialog(PlaceOrder.this);
+            final CustomDialog customDialog = new CustomDialog(POSActivity.this);
 			customDialog.setContentView(textEntryView);
 			customDialog.show();
 			customDialog.setCancelable(true);
@@ -397,7 +397,7 @@ public class PlaceOrder extends Activity {
 		public void run() {
 			LayoutInflater factory = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			final View textEntryView = factory.inflate(R.layout.network_send_fail_dialog, null);
-			final CustomDialog customDialog = new CustomDialog(PlaceOrder.this);
+            final CustomDialog customDialog = new CustomDialog(POSActivity.this);
 			customDialog.setContentView(textEntryView);
 			customDialog.show();
 			customDialog.setCancelable(true);
@@ -409,7 +409,7 @@ public class PlaceOrder extends Activity {
 		public void run() {
 			LayoutInflater factory = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			final View textEntryView = factory.inflate(R.layout.cant_close_dialog, null);
-			final CustomDialog customDialog = new CustomDialog(PlaceOrder.this);
+            final CustomDialog customDialog = new CustomDialog(POSActivity.this);
 			customDialog.setContentView(textEntryView);
 			customDialog.show();
 			customDialog.setCancelable(true);
@@ -590,10 +590,10 @@ public class PlaceOrder extends Activity {
 
 		setContentView(R.layout.placeorder);
 
-		txtSize0 = (Utils.getFontSize(PlaceOrder.this));
-		txtSize1 = (int) (Utils.getFontSize(PlaceOrder.this) / 1.2);
-		txtSize2 = (int) (Utils.getFontSize(PlaceOrder.this) / 1.4);
-		txtSize3 = (int) (Utils.getFontSize(PlaceOrder.this) / 1.1);
+        txtSize0 = (Utils.getFontSize(POSActivity.this));
+        txtSize1 = (int) (Utils.getFontSize(POSActivity.this) / 1.2);
+        txtSize2 = (int) (Utils.getFontSize(POSActivity.this) / 1.4);
+        txtSize3 = (int) (Utils.getFontSize(POSActivity.this) / 1.1);
 
 		// setup the button references
 		setupButtons();
@@ -666,7 +666,7 @@ public class PlaceOrder extends Activity {
 		}
 
 		GridView gridview = (GridView) findViewById(R.id.gridView1);
-		gridAdapter = new GridAdapter(PlaceOrder.this, R.layout.array_list_item, dishArrayList);
+        gridAdapter = new GridAdapter(POSActivity.this, R.layout.array_list_item, dishArrayList);
 		gridview.setAdapter(gridAdapter);
 
 		// set up for the Order List
@@ -678,7 +678,7 @@ public class PlaceOrder extends Activity {
 
 		listOrder = (ListView) findViewById(R.id.listOrder);
 		listOrder.setItemsCanFocus(true);
-		orderAdapter = new OrderAdapter(PlaceOrder.this, R.layout.list_item, JSONOrderList);
+        orderAdapter = new OrderAdapter(POSActivity.this, R.layout.list_item, JSONOrderList);
 		listOrder.setAdapter(orderAdapter);
 
 		listOrder.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
@@ -706,7 +706,7 @@ public class PlaceOrder extends Activity {
 							}
 						}
 					} else {
-						Toast.makeText(PlaceOrder.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
+                        Toast.makeText(POSActivity.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
 					}
 					// Close CAB
 					mode.finish();
@@ -725,7 +725,7 @@ public class PlaceOrder extends Activity {
 							}
 						}
 					} else {
-						Toast.makeText(PlaceOrder.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
+                        Toast.makeText(POSActivity.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
 					}
 					// Close CAB
 					mode.finish();
@@ -1043,7 +1043,7 @@ public class PlaceOrder extends Activity {
 		saveButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (JSONOrderList.isEmpty()) {
-					AlertDialog alertDialog = new AlertDialog.Builder(PlaceOrder.this).create();
+                    AlertDialog alertDialog = new AlertDialog.Builder(POSActivity.this).create();
 					alertDialog.setTitle(getString(R.string.tab3_empty_title));
 					alertDialog.setMessage(getString(R.string.tab3_empty_text));
 					alertDialog.setButton(getString(R.string.tab3_back), new DialogInterface.OnClickListener() {
@@ -1072,7 +1072,7 @@ public class PlaceOrder extends Activity {
 		closeButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (JSONOrderList.isEmpty()) {
-					AlertDialog alertDialog = new AlertDialog.Builder(PlaceOrder.this).create();
+                    AlertDialog alertDialog = new AlertDialog.Builder(POSActivity.this).create();
 					alertDialog.setTitle(getString(R.string.tab3_empty_title));
 					alertDialog.setMessage(getString(R.string.tab3_empty_text));
 					alertDialog.setButton(getString(R.string.tab3_back), new DialogInterface.OnClickListener() {
@@ -1082,7 +1082,7 @@ public class PlaceOrder extends Activity {
 					alertDialog.show();
 				} else {
 					// Popup a payment type dialog
-					dialog = new Dialog(PlaceOrder.this);
+                    dialog = new Dialog(POSActivity.this);
 					dialog.setContentView(R.layout.payment_type_popup);
 					// Title for the popup modify item box
 					String tit = getString(R.string.msg_saletype_choose);
@@ -1104,13 +1104,13 @@ public class PlaceOrder extends Activity {
 
 					// New VERTICAL Linear Layout for each TextView header and BUTTON row
 					LinearLayout newLLV;
-					newLLV = new LinearLayout(PlaceOrder.this);
+                    newLLV = new LinearLayout(POSActivity.this);
 					newLLV.setLayoutParams(layoutParams);
 					newLLV.setOrientation(LinearLayout.VERTICAL);
 					newLLV.setHorizontalGravity(Gravity.LEFT);
 					// New HORIZONTAL Linear Layout for the buttons in the group
 					LinearLayout newLLH;
-					newLLH = new LinearLayout(PlaceOrder.this);
+                    newLLH = new LinearLayout(POSActivity.this);
 					newLLH.setLayoutParams(layoutParams);
 					newLLH.setOrientation(LinearLayout.HORIZONTAL);
 					newLLH.setHorizontalGravity(Gravity.CENTER);
@@ -1125,7 +1125,7 @@ public class PlaceOrder extends Activity {
 
 							String st = String.valueOf(i);
 
-							butPT[i] = new Button(PlaceOrder.this);
+                            butPT[i] = new Button(POSActivity.this);
 							butPT[i].setTag(st); // put the Saletype=i in the button TAG
 
 							butPT[i].setText(nam);
@@ -1170,7 +1170,7 @@ public class PlaceOrder extends Activity {
 						}
 					}
 					// Add the header - NOT NEEDED, THE POPUP ALREADY HAS A TITLE
-					//TextView tvtitle = new TextView(PlaceOrder.this);
+                    //TextView tvtitle = new TextView(POSActivity.this);
 					//tvtitle.setText("Payment Type");
 					//tvtitle.setLayoutParams(layoutParams);
 					//newLLV.addView(tvtitle);
@@ -1212,7 +1212,7 @@ public class PlaceOrder extends Activity {
 	private void saveTheTab(final String json) {
 		// build the tickets
 		// Thread safe - we need to do everything from the passed in JSONtmp
-		final ProgressDialog pd = ProgressDialog.show(PlaceOrder.this, getString(R.string.tab3_sending_title), getString(R.string.tab3_sending), true, false);
+        final ProgressDialog pd = ProgressDialog.show(POSActivity.this, getString(R.string.tab3_sending_title), getString(R.string.tab3_sending), true, false);
 		new Thread(new Runnable() {
 			public void run() {
 				try {
@@ -1265,7 +1265,7 @@ public class PlaceOrder extends Activity {
 	private void sendTheTab(final String json) {
 		// build the tickets
 		// Thread safe - we need to do everything from the passed in JSONtmp
-		final ProgressDialog pd = ProgressDialog.show(PlaceOrder.this, getString(R.string.tab3_sending_title), getString(R.string.tab3_sending), true, false);
+        final ProgressDialog pd = ProgressDialog.show(POSActivity.this, getString(R.string.tab3_sending_title), getString(R.string.tab3_sending), true, false);
 		new Thread(new Runnable() {
 			public void run() {
 				try {
@@ -1447,7 +1447,7 @@ public class PlaceOrder extends Activity {
 		LinearLayout llMain = (LinearLayout) dialog.findViewById(R.id.llMain);
 		// new HOR lin Lay
 		LinearLayout newLL;
-		newLL = new LinearLayout(PlaceOrder.this);
+        newLL = new LinearLayout(POSActivity.this);
 		newLL.setLayoutParams(layoutParams);
 		newLL.setOrientation(LinearLayout.HORIZONTAL);
 		newLL.setHorizontalGravity(Gravity.RIGHT);
@@ -1456,7 +1456,7 @@ public class PlaceOrder extends Activity {
 		llMain.addView(newLL, lineLL);
 		// work through the items
 		for (int i = 0; i < rmbItem.length; i++) {
-			rbM[i] = new Button(PlaceOrder.this);
+            rbM[i] = new Button(POSActivity.this);
 			//rbM[i].setId(i);
 			rbM[i].setTag(i);
 			if (isChinese()) {
@@ -1488,7 +1488,7 @@ public class PlaceOrder extends Activity {
 			if (remainder == 0) {
 				// start a new LL Horizontal
 				lineLL = lineLL + 1;
-				newLL = new LinearLayout(PlaceOrder.this);
+                newLL = new LinearLayout(POSActivity.this);
 				newLL.setLayoutParams(layoutParams);
 				newLL.setOrientation(LinearLayout.HORIZONTAL);
 				llMain.addView(newLL, lineLL);
@@ -1503,7 +1503,7 @@ public class PlaceOrder extends Activity {
 			// set up array of BUTTONS for each group
 			for (int j = 0; j < numOptions; j++) {
 				// new HOR lin Lay
-				newLL = new LinearLayout(PlaceOrder.this);
+                newLL = new LinearLayout(POSActivity.this);
 				newLL.setLayoutParams(layoutParams);
 				newLL.setOrientation(LinearLayout.HORIZONTAL);
 				lineLL = 0;
@@ -1519,7 +1519,7 @@ public class PlaceOrder extends Activity {
 				String[] OptDetailAlt = Opt[1].split("%");    // alt language
 				// set up the buttons
 				for (int i = 0; i < OptDetail.length; i++) {
-					rbO[j][i] = new Button(PlaceOrder.this);
+                    rbO[j][i] = new Button(POSActivity.this);
 					rbO[j][i].setTag(j);
 					if (isChinese()) {
 						String s = OptDetailAlt[i];
@@ -1548,7 +1548,7 @@ public class PlaceOrder extends Activity {
 					if (remainder == 0) {
 						// start a new LL Horizontal
 						lineLL = lineLL + 1;
-						newLL = new LinearLayout(PlaceOrder.this);
+                        newLL = new LinearLayout(POSActivity.this);
 						newLL.setLayoutParams(layoutParams);
 						newLL.setOrientation(LinearLayout.HORIZONTAL);
 						llOption.addView(newLL, lineLL);
@@ -1563,15 +1563,15 @@ public class PlaceOrder extends Activity {
 		// set up the EXTRAS check boxes
 		numExtras = 0;
 
-		//Toast.makeText(PlaceOrder.this, "B4Inside=" + extrasItem[0] + " Len=" + extrasItem[0].length(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(POSActivity.this, "B4Inside=" + extrasItem[0] + " Len=" + extrasItem[0].length(), Toast.LENGTH_SHORT).show();
 		if (!extrasItem[0].equalsIgnoreCase("none")) {
-			//Toast.makeText(PlaceOrder.this, "Inside=" + extrasItem[0] + " Len=" + extrasItem[0].length(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(POSActivity.this, "Inside=" + extrasItem[0] + " Len=" + extrasItem[0].length(), Toast.LENGTH_SHORT).show();
 			numExtras = extrasItem.length;
 			LinearLayout llExtra = (LinearLayout) dialog.findViewById(R.id.llExtras);
 			// set up array of BUTTONS for each group
 			for (int j = 0; j < numExtras; j++) {
 				// new HOR lin Lay
-				newLL = new LinearLayout(PlaceOrder.this);
+                newLL = new LinearLayout(POSActivity.this);
 				newLL.setLayoutParams(layoutParams);
 				newLL.setOrientation(LinearLayout.HORIZONTAL);
 				lineLL = 0;
@@ -1588,7 +1588,7 @@ public class PlaceOrder extends Activity {
 
 				// set up the buttons
 				for (int i = 0; i < ExtDetail.length; i++) {
-					rbE[j][i] = new Button(PlaceOrder.this);
+                    rbE[j][i] = new Button(POSActivity.this);
 					final Integer btnID = 100 * j + i;
 					rbE[j][i].setId(btnID);
 					rbE[j][i].setTag(j);
@@ -1630,7 +1630,7 @@ public class PlaceOrder extends Activity {
 					if (remainder == 0) {
 						// start a new LL Horizontal
 						lineLL = lineLL + 1;
-						newLL = new LinearLayout(PlaceOrder.this);
+                        newLL = new LinearLayout(POSActivity.this);
 						newLL.setLayoutParams(layoutParams);
 						newLL.setOrientation(LinearLayout.HORIZONTAL);
 						llExtra.addView(newLL, lineLL);
@@ -1878,20 +1878,20 @@ public class PlaceOrder extends Activity {
 
 				// New VERTICAL Linear Layout for each TextView header and BUTTON row
 				LinearLayout newLLV;
-				newLLV = new LinearLayout(PlaceOrder.this);
+                newLLV = new LinearLayout(POSActivity.this);
 				newLLV.setLayoutParams(layoutParams);
 				newLLV.setOrientation(LinearLayout.VERTICAL);
 				newLLV.setHorizontalGravity(Gravity.LEFT);
 				// New HORIZONTAL Linear Layout for the buttons in the group
 				LinearLayout newLLH;
-				newLLH = new LinearLayout(PlaceOrder.this);
+                newLLH = new LinearLayout(POSActivity.this);
 				newLLH.setLayoutParams(layoutParams);
 				newLLH.setOrientation(LinearLayout.HORIZONTAL);
 				newLLH.setHorizontalGravity(Gravity.CENTER);
 
 				for (int j = 0; j < JSONitems.length(); j++) {
 					JSONArray ji = JSONitems.getJSONArray(j);
-					butOIP[j] = new Button(PlaceOrder.this);
+                    butOIP[j] = new Button(POSActivity.this);
 					butOIP[j].setTag(ji.toString()); // put the whole JSON item into the tag so we know what to do when it gets pressed
 					if (isChinese()) butOIP[j].setText(jsonGetter2(ji, "titlealt").toString());
 					else butOIP[j].setText(jsonGetter2(ji, "title").toString());
@@ -1909,7 +1909,7 @@ public class PlaceOrder extends Activity {
 					newLLH.addView(butOIP[j], j, layoutParams3);
 				}
 				// Add the header
-				TextView tvtitle = new TextView(PlaceOrder.this);
+                TextView tvtitle = new TextView(POSActivity.this);
 				tvtitle.setText(nam);
 				tvtitle.setLayoutParams(layoutParams);
 				newLLV.addView(tvtitle);
@@ -1925,18 +1925,18 @@ public class PlaceOrder extends Activity {
 		// Add the final custom spec ins button
 		// New VERTICAL Linear Layout for each TextView header and BUTTON row
 		LinearLayout newLLV;
-		newLLV = new LinearLayout(PlaceOrder.this);
+        newLLV = new LinearLayout(POSActivity.this);
 		newLLV.setLayoutParams(layoutParams);
 		newLLV.setOrientation(LinearLayout.VERTICAL);
 		newLLV.setHorizontalGravity(Gravity.LEFT);
 		// New HORIZONTAL Linear Layout for the buttons in the group
 		LinearLayout newLLH;
-		newLLH = new LinearLayout(PlaceOrder.this);
+        newLLH = new LinearLayout(POSActivity.this);
 		newLLH.setLayoutParams(layoutParams);
 		newLLH.setOrientation(LinearLayout.HORIZONTAL);
 		newLLH.setHorizontalGravity(Gravity.CENTER);
 		// Add the button
-		Button butCustSI = new Button(PlaceOrder.this);
+        Button butCustSI = new Button(POSActivity.this);
 		butCustSI.setText(getString(R.string.special_ins_custom));
 		butCustSI.setTextColor(Color.parseColor(textColors[0]));
 		butCustSI.setTextSize(txtSize1);
@@ -1948,7 +1948,7 @@ public class PlaceOrder extends Activity {
 			public void onClick(View v) {
 				try {
 					// Custom dialog needed to get the instructions. position=the dish index
-					final Dialog dialogAS = new Dialog(PlaceOrder.this);
+                    final Dialog dialogAS = new Dialog(POSActivity.this);
 
 					dialogAS.setContentView(R.layout.special_instruction);
 					dialogAS.setCancelable(true);
@@ -2011,7 +2011,7 @@ public class PlaceOrder extends Activity {
 		});
 		newLLH.addView(butCustSI, 0, layoutParams3);
 		// Add the header
-		TextView tvtitle = new TextView(PlaceOrder.this);
+        TextView tvtitle = new TextView(POSActivity.this);
 		tvtitle.setText(getString(R.string.special_ins_title));
 		tvtitle.setLayoutParams(layoutParams);
 		newLLV.addView(tvtitle);
@@ -2060,7 +2060,7 @@ public class PlaceOrder extends Activity {
 					String sendserver = "10," + Utils.GetDateTime() + "," + Global.ServerName + "," + discount;
 					activityLogger(sendserver);
 				} else {
-					Toast.makeText(PlaceOrder.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
+                    Toast.makeText(POSActivity.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
 				}
 			}
 			// Handle Quantities
@@ -2129,7 +2129,7 @@ public class PlaceOrder extends Activity {
 				label.setText(spanString);
 			}
 			label.setTextSize(textSize);
-			label.setHeight((int) (Utils.getWindowButtonHeight(PlaceOrder.this)));
+            label.setHeight((int) (Utils.getWindowButtonHeight(POSActivity.this)));
 
 			String catColumns = menuColumns[1];
 			// look up the category and set the language
@@ -2156,11 +2156,11 @@ public class PlaceOrder extends Activity {
 		private int orderFontSizeSmall;
 		private SparseBooleanArray mSelectedItemsIds;
 
-		public OrderAdapter(PlaceOrder placeOrder, int textViewResourceId, ArrayList<JSONArray> items) {
+        public OrderAdapter(POSActivity posActivity, int textViewResourceId, ArrayList<JSONArray> items) {
 			super(getBaseContext(), textViewResourceId, items);
 			this.items = items;
-			orderFontSize = (Utils.getFontSize(PlaceOrder.this));
-			orderFontSizeSmall = (int) (Utils.getFontSize(PlaceOrder.this) / 1.2);
+            orderFontSize = (Utils.getFontSize(POSActivity.this));
+            orderFontSizeSmall = (int) (Utils.getFontSize(POSActivity.this) / 1.2);
 			mSelectedItemsIds = new SparseBooleanArray();
 		}
 
@@ -2483,7 +2483,7 @@ public class PlaceOrder extends Activity {
 	}
 
 	public void lostConnection() {
-		AlertDialog alertDialog = new AlertDialog.Builder(PlaceOrder.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(POSActivity.this).create();
 		alertDialog.setTitle("Connection");
 		alertDialog.setIcon(android.R.drawable.stat_sys_warning);
 		alertDialog.setMessage("Data connection not available. Please restart.");
@@ -2500,7 +2500,7 @@ public class PlaceOrder extends Activity {
 		LinearLayout mll;
 		mll = ll;
 		// add divider line
-		ImageView imageLine = new ImageView(PlaceOrder.this);
+        ImageView imageLine = new ImageView(POSActivity.this);
 		imageLine.setBackgroundResource(R.drawable.bar_white);
 		mll.addView(imageLine);
 	}
@@ -2509,7 +2509,7 @@ public class PlaceOrder extends Activity {
 		LinearLayout mll;
 		mll = ll;
 		// add divider line
-		ImageView imageLine = new ImageView(PlaceOrder.this);
+        ImageView imageLine = new ImageView(POSActivity.this);
 		imageLine.setBackgroundResource(R.drawable.gap);
 		mll.addView(imageLine);
 	}
@@ -2702,13 +2702,13 @@ public class PlaceOrder extends Activity {
 			} catch (Exception ex) {
 				String errorString = "";
 				if (err != null) errorString = EpsonCom.getErrorText(err);
-				messageBox(PlaceOrder.this,
+                messageBox(POSActivity.this,
 						"Sorry, Cash Drawer cannot be opened. " + errorString,
 						"Connection problem 1");
 			}
 		} else {
 			String errorString = "Sorry, Cash Drawer cannot be opened. ";
-			messageBox(PlaceOrder.this, errorString, "Connection problem 1b");
+            messageBox(POSActivity.this, errorString, "Connection problem 1b");
 		}
 	}
 
@@ -2899,14 +2899,14 @@ public class PlaceOrder extends Activity {
 				unsentItemList.add(f.getName());
 
 			listUnsent = (ListView) customDialog.findViewById(R.id.unsentItemList);
-			unsentAdapter = new ArrayAdapter<String>(PlaceOrder.this, android.R.layout.simple_list_item_1, unsentItemList);
+            unsentAdapter = new ArrayAdapter<String>(POSActivity.this, android.R.layout.simple_list_item_1, unsentItemList);
 			listUnsent.setAdapter(unsentAdapter);
 
 			// set up a button, when they click, resend all the items
 			Button butSnd = (Button) customDialog.findViewById(R.id.butSndAll);
 			butSnd.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
-					final ProgressDialog pd = ProgressDialog.show(PlaceOrder.this, "Sending", "Sending order(s) to the server...", true, false);
+                    final ProgressDialog pd = ProgressDialog.show(POSActivity.this, "Sending", "Sending order(s) to the server...", true, false);
 					new Thread(new Runnable() {
 						public void run() {
 							if ((pingIP()) & (Global.TicketToCloud)) {
@@ -2995,7 +2995,7 @@ public class PlaceOrder extends Activity {
 					final String myDateMM = sdfMM.format(myCalendar.getTime());
 					final String myDateDD = sdfDD.format(myCalendar.getTime());
 
-					final ProgressDialog pd = ProgressDialog.show(PlaceOrder.this, "Daily Summary", "Retrieving from the server...", true, false);
+                    final ProgressDialog pd = ProgressDialog.show(POSActivity.this, "Daily Summary", "Retrieving from the server...", true, false);
 					new Thread(new Runnable() {
 						public void run() {
 							if (pingIP()) {
@@ -3035,7 +3035,7 @@ public class PlaceOrder extends Activity {
 								} catch (Exception ex) {
 									String errorString = "";
 									if (err != null) errorString = EpsonCom.getErrorText(err);
-									messageBox(PlaceOrder.this,
+                                    messageBox(POSActivity.this,
 											getString(R.string.tab3_pos_err_1) + errorString +
 													getString(R.string.tab3_pos_err_2), "Connection problem 1");
 								}
@@ -3048,7 +3048,7 @@ public class PlaceOrder extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					new DatePickerDialog(PlaceOrder.this, date, myCalendar
+                    new DatePickerDialog(POSActivity.this, date, myCalendar
 							.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
 							myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 				}
@@ -3125,7 +3125,7 @@ public class PlaceOrder extends Activity {
 											String errorString = "";
 											if (err != null)
 												errorString = EpsonCom.getErrorText(err);
-											messageBox(PlaceOrder.this,
+                                            messageBox(POSActivity.this,
 													getString(R.string.tab3_pos_err_1) + errorString +
 															getString(R.string.tab3_pos_err_2), "Connection problem 1");
 										}
@@ -3300,7 +3300,7 @@ public class PlaceOrder extends Activity {
 						}
 					});
 				} else {
-					Toast.makeText(PlaceOrder.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
+                    Toast.makeText(POSActivity.this, getString(R.string.msg_operation_not_allowed), Toast.LENGTH_LONG).show();
 				}
 			}
 			return (true);
@@ -3372,7 +3372,7 @@ public class PlaceOrder extends Activity {
 						for (File f : filesR) reloadItemList.add(f.getName());
 
 						gridReload = (GridView) customDialog.findViewById(R.id.reloadItemGrid);
-						reloadAdapter = new TicketAdapter(PlaceOrder.this, R.layout.ticket_item, reloadItemList);
+                        reloadAdapter = new TicketAdapter(POSActivity.this, R.layout.ticket_item, reloadItemList);
 						gridReload.setAdapter(reloadAdapter);
 
 						gridReload.setOnItemClickListener(new OnItemClickListener() {
@@ -3435,7 +3435,7 @@ public class PlaceOrder extends Activity {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						new DatePickerDialog(PlaceOrder.this, date, myCalendar
+                        new DatePickerDialog(POSActivity.this, date, myCalendar
 								.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
 								myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 					}
@@ -3446,7 +3446,7 @@ public class PlaceOrder extends Activity {
 
 		if (item.getItemId() == 20) {
 			if (anyTabsOpen()) {
-				AlertDialog alertDialog = new AlertDialog.Builder(PlaceOrder.this).create();
+                AlertDialog alertDialog = new AlertDialog.Builder(POSActivity.this).create();
 				alertDialog.setTitle(getString(R.string.tab3_opentabs_title));
 				alertDialog.setMessage(getString(R.string.tab3_opentabs_text));
 				alertDialog.setButton(getString(R.string.tab3_continue), new DialogInterface.OnClickListener() {
@@ -3555,7 +3555,7 @@ public class PlaceOrder extends Activity {
 		}
 		if (item.getItemId() == 2) {
 			// Handle a click on the Server, allow change of User in case a manager or admin password is required for an operation
-			AlertDialog.Builder builder = new AlertDialog.Builder(PlaceOrder.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(POSActivity.this);
 			builder.setTitle(getString(R.string.login_person_name));
 			builder.setCancelable(true);
 			String[] tmpArr = new String[Global.userList.size()];
@@ -3603,7 +3603,7 @@ public class PlaceOrder extends Activity {
 			GridView gridview = (GridView) findViewById(R.id.gridView1);
 			gridview.setAdapter(new GridAdapter(this, R.layout.array_list_item, dishArrayList));
 			listOrder = (ListView) findViewById(R.id.listOrder);
-			listOrder.setAdapter(new OrderAdapter(PlaceOrder.this, R.layout.list_item, JSONOrderList));
+            listOrder.setAdapter(new OrderAdapter(POSActivity.this, R.layout.list_item, JSONOrderList));
 			invalidateOptionsMenu();
 			setupButtons();
 			return (true);
@@ -3618,7 +3618,7 @@ public class PlaceOrder extends Activity {
 			GridView gridview = (GridView) findViewById(R.id.gridView1);
 			gridview.setAdapter(new GridAdapter(this, R.layout.array_list_item, dishArrayList));
 			listOrder = (ListView) findViewById(R.id.listOrder);
-			listOrder.setAdapter(new OrderAdapter(PlaceOrder.this, R.layout.list_item, JSONOrderList));
+            listOrder.setAdapter(new OrderAdapter(POSActivity.this, R.layout.list_item, JSONOrderList));
 			invalidateOptionsMenu();
 			setupButtons();
 			return (true);
@@ -3632,7 +3632,7 @@ public class PlaceOrder extends Activity {
 				if (currentTableID != -1) {
 					vfMenuTable.setDisplayedChild(0);
 				} else {
-					Toast.makeText(PlaceOrder.this, getString(R.string.msg_select_table), Toast.LENGTH_LONG).show();
+                    Toast.makeText(POSActivity.this, getString(R.string.msg_select_table), Toast.LENGTH_LONG).show();
 				}
 			}
 			invalidateOptionsMenu();
@@ -3777,7 +3777,7 @@ public class PlaceOrder extends Activity {
 						} catch (Exception ex) {
 							String errorString = "";
 							if (err != null) errorString = EpsonCom.getErrorText(err);
-							messageBox(PlaceOrder.this,
+                            messageBox(POSActivity.this,
 									getString(R.string.tab3_pos_err_1) + errorString +
 											getString(R.string.tab3_pos_err_2), "Connection problem 1");
 						}
@@ -3790,7 +3790,7 @@ public class PlaceOrder extends Activity {
 			butPay.setTextColor(Color.parseColor("#eeeeee"));
 			butPay.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
-					final Dialog dialogPO = new Dialog(PlaceOrder.this);
+                    final Dialog dialogPO = new Dialog(POSActivity.this);
 					dialogPO.setContentView(R.layout.payout);
 					dialogPO.setCancelable(true);
 					dialogPO.setCanceledOnTouchOutside(true);
@@ -3820,7 +3820,7 @@ public class PlaceOrder extends Activity {
 								customDialog.dismiss();
 								Global.RegisterPayout = Global.RegisterPayout + Integer.valueOf(po1);
 								Global.RegisterCashTotal = Global.RegisterCashTotal - Integer.valueOf(po1);
-								//Toast.makeText(PlaceOrder.this, "DO PAYOUT", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(POSActivity.this, "DO PAYOUT", Toast.LENGTH_SHORT).show();
 								// Save to a file
 								String fname = "payouts.txt";
 								final String sendServer = Utils.GetDateTime() + "," +
@@ -3867,7 +3867,7 @@ public class PlaceOrder extends Activity {
 									} catch (Exception ex) {
 										String errorString = "";
 										if (err != null) errorString = EpsonCom.getErrorText(err);
-										messageBox(PlaceOrder.this,
+                                        messageBox(POSActivity.this,
 												getString(R.string.tab3_pos_err_1) + errorString +
 														getString(R.string.tab3_pos_err_2), "Connection problem 1");
 									}
@@ -3925,7 +3925,7 @@ public class PlaceOrder extends Activity {
 
 	private void getPassword(String js, String expectedpw, int returnID, int dishPosition, Dialog dialogNames) {
 		final Dialog dialogPW;
-		dialogPW = new Dialog(PlaceOrder.this);
+        dialogPW = new Dialog(POSActivity.this);
 		dialogPW.setContentView(R.layout.password);
 		dialogPW.setCancelable(true);
 		dialogPW.setCanceledOnTouchOutside(true);
@@ -4114,7 +4114,7 @@ public class PlaceOrder extends Activity {
 					} catch (Exception ex) {
 						String errorString = "";
 						if (err != null) errorString = EpsonCom.getErrorText(err);
-						messageBox(PlaceOrder.this,
+                        messageBox(POSActivity.this,
 								getString(R.string.tab3_pos_err_1) + errorString +
 										getString(R.string.tab3_pos_err_2), "Connection problem 1");
 					}
@@ -4169,7 +4169,7 @@ public class PlaceOrder extends Activity {
 							sendServer,
 							Global.SMID);
 				} else {
-					log("PlaceOrder: activityLogger failed");
+                    log("POSActivity: activityLogger failed");
 				}
 			}
 		}).start();
@@ -4448,14 +4448,14 @@ public class PlaceOrder extends Activity {
 			if (action.equalsIgnoreCase(SmartMenuService.NEW_MSG)) {
 				Bundle extra = intent.getExtras();
 				String newMsg = extra.getString("msgdata");
-				log("PlaceOrder: MQTT Msg Received= " + newMsg);
+                log("POSActivity: MQTT Msg Received= " + newMsg);
 				lastIncomingMsgData = newMsg;
 				mHandler.post(mMsgArrived);
 			}
 			if (action.equalsIgnoreCase(SmartMenuService.NEW_ORDER)) {
 				Bundle extras = intent.getExtras();
 				final String value = extras.getString("orderdata");
-				//log("PlaceOrder: Order Received");
+                //log("POSActivity: Order Received");
 				try {
 					JSONArray JSONtmp2 = new JSONArray(value);
 					// See if the order came from TO App and just needs to be printed and saved
@@ -4591,7 +4591,7 @@ public class PlaceOrder extends Activity {
 		// setup table buttons
 		tableButtons = new Button[MaxTABLES];
 
-		int wide = (int) (Utils.getWidth(PlaceOrder.this) / 9.5);
+        int wide = (int) (Utils.getWidth(POSActivity.this) / 9.5);
 		int high = (int) (wide / 1.7);
 		for (int i = 0; i < MaxTABLES; i++) {
 			String buttonID = "butt" + (i);
@@ -4677,7 +4677,7 @@ public class PlaceOrder extends Activity {
 				log("JSONOtmp updateTableButtons Exception=" + e);
 			}
 
-			tableButtons[i].setHeight((int) (Utils.getWindowButtonHeight(PlaceOrder.this)));
+            tableButtons[i].setHeight((int) (Utils.getWindowButtonHeight(POSActivity.this)));
 		}
 
 		if (currentTableID != -1) {
@@ -4755,9 +4755,9 @@ public class PlaceOrder extends Activity {
 	}
 
 	private void setupButtons() {
-		int widthL = (int) (Utils.getWidth(PlaceOrder.this) / 15.0);
-		int widthM = (int) (Utils.getWidth(PlaceOrder.this) / 18.0);
-		int widthS = (int) (Utils.getWidth(PlaceOrder.this) / 30.0);
+        int widthL = (int) (Utils.getWidth(POSActivity.this) / 15.0);
+        int widthM = (int) (Utils.getWidth(POSActivity.this) / 18.0);
+        int widthS = (int) (Utils.getWidth(POSActivity.this) / 30.0);
 		int widthfull = txtSize0;
 
 		closeButton = (Button) findViewById(R.id.closeButton);
@@ -4849,7 +4849,7 @@ public class PlaceOrder extends Activity {
 			writer.flush();
 			writer.close();
 		} catch (Exception e) {
-			log("PlaceOrder: WriteOutFile Exception: Dir=" + fildir + " fname=" + fname);
+            log("POSActivity: WriteOutFile Exception: Dir=" + fildir + " fname=" + fname);
 		}
 	}
 

@@ -7,13 +7,13 @@
       "type": "MAIN",
       "splits": [],
       "versionCode": 1,
-      "versionName": "1.04",
+      "versionName": "1.05",
       "enabled": true,
-      "outputFile": "app-release.apk",
+      "outputFile": "SmartMenu_POS105.apk",
       "fullName": "release",
       "baseName": "release"
     },
-    "path": "app-release.apk",
+    "path": "SmartMenu_POS105.apk",
     "properties": {}
   }
 ]

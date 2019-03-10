@@ -200,7 +200,7 @@ public class Utils {
 				status = response.code();
 			}
 		} catch (Throwable e) {
-			PlaceOrder.log("Utils sendJSON ex=" + e);
+			POSActivity.log("Utils sendJSON ex=" + e);
 			status = -1;
 		}
 		return status;
@@ -235,7 +235,7 @@ public class Utils {
 				returntxt = response.body().string();
 			}
 		} catch (Throwable e) {
-			PlaceOrder.log("Utils sendPHP ex=" + e);
+			POSActivity.log("Utils sendPHP ex=" + e);
 			status = -1;
 		}
 		return returntxt;
@@ -279,7 +279,7 @@ public class Utils {
 				returntxt = response.body().string();
 			}
 		} catch (Throwable e) {
-			PlaceOrder.log("Utils sendDate main ex=" + e);
+			POSActivity.log("Utils sendDate main ex=" + e);
 		}
 		return returntxt;
 	}
@@ -315,7 +315,7 @@ public class Utils {
 				status = response.code();
 			}
 		} catch (Throwable e) {
-			PlaceOrder.log("Utils sendAH main ex=" + e);
+			POSActivity.log("Utils sendAH main ex=" + e);
 		}
 		return status;
 	}

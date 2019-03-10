@@ -476,9 +476,6 @@ public class LoginActivity extends Activity {
 			// save exit log
 			String sendserver = "5," + Utils.GetDateTime() + "," + Global.ServerName;
 			activityLogger(sendserver);
-			// Stop the Service
-			SmartMenuService.actionStop(getApplicationContext());
-
 			finish();
 			return (true);
 		}
